@@ -72,7 +72,7 @@ function game(){
     fill(255, 255, 255);
     textSize(40);
     textAlign(CENTER);
-    text("Press Play Button To Start The Game ", gameConfig.screenX/2, gameConfig.screenY/2);
+    text("Presiona el botón de inicio para iniciar el juego ", gameConfig.screenX/2, gameConfig.screenY/2);
     textSize(40);
 
     stroke(255);
@@ -100,12 +100,12 @@ function game(){
     fill(255, 255, 255);
     textSize(40);
     textAlign(CENTER);
-    text("GAME OVER", gameConfig.screenX/2, gameConfig.screenY/2+105);
+    text("FIN DEL JUEGO", gameConfig.screenX/2, gameConfig.screenY/2+105);
     textSize(15);
-    text("Press SPACE to Restart", gameConfig.screenX/2, gameConfig.screenY/2+135);
+    text("Presiona ESPACIO para reiniciar", gameConfig.screenX/2, gameConfig.screenY/2+135);
     textSize(40);
     text(round(gameConfig.scores),gameConfig.screenX/2,gameConfig.screenY/2-35);
-    text("points",gameConfig.screenX/2,gameConfig.screenY/2);
+    text("puntos",gameConfig.screenX/2,gameConfig.screenY/2);
 
     stroke(255);
     strokeWeight(7);
@@ -118,13 +118,13 @@ function game(){
 function startGame()
 {
   GameStatus = "start";
-  document.getElementById("status").innerHTML = "Game Is Loading";
+  document.getElementById("status").innerHTML = "El juego se está cargando";
 }
 
 // cambia el estado del juego si cualquier tecla se presiona
 function changeGameStatud(character){
  if(noseX !="" && gameConfig.status==="start" && GameStatus=="start") { 
-   document.getElementById("status").innerHTML = "Game Is Loaded";
+   document.getElementById("status").innerHTML = "El juego se está cargando";
    world_start.play();
  initializeCharacterStatus(ninja)
     gameConfig.status= "play"
@@ -590,8 +590,8 @@ function scores(character){
 
   if(character.live&&gameConfig.status==='play') gameConfig.timeScores+=0.05;
   
-  text("scores: "+round(gameConfig.scores),20,40);
-  text("lives: "+character.liveNumber,20,80);
+  text("Puntuaciones: "+round(gameConfig.scores),20,40);
+  text("Vidas: "+character.liveNumber,20,80);
 
   if(ninja.live==false && ninja.liveNumber!=0){
     fill(0,0,0,150);
@@ -611,7 +611,7 @@ function scores(character){
     textAlign(CENTER);
     textSize(40);
     text(round(character.liveNumber),gameConfig.screenX/2,gameConfig.screenY/2-35);
-    text("lives",gameConfig.screenX/2,gameConfig.screenY/2);
+    text("vidas",gameConfig.screenX/2,gameConfig.screenY/2);
 
     
   }
